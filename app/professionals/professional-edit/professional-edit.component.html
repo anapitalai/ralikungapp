@@ -1,0 +1,30 @@
+<h1>Professional Data Form</h1><hr>
+<div *ngIf='professional'>
+    <form (ngSubmit)="updateProfessional()">
+        <div class="form-group">
+            <label for="">Stationery</label>
+            <input class="form-control" type='text' name='name' [(ngModel)]='professional.name'>
+        </div>
+        <div class="form-group">
+            <label for="">Description</label>
+            <input class="form-control" type='textarea' name="description" [(ngModel)]='professional.description'>
+        </div>
+        <div class="form-group">
+                <label for="">Images</label>
+                <input class="form-control" type='file' multiple name="images" [(ngModel)]='professional.images'>
+        </div>
+
+    
+
+
+        <div *ngIf='successMessage' class="alert alert-success">{{successMessage}}</div>
+        <div *ngIf='errorMessage' class="alert alert-danger">{{errorMessage}}</div>
+
+        <button type="submit" class="btn btn-success">Update</button>        
+    </form>
+
+</div>       
+
+
+
+

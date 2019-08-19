@@ -1,0 +1,20 @@
+<div class="jumbotron text-center">
+    <h1>RALIKU REALESTATES WAPP</h1>
+    <small>Let the app get your accomodation in Lae.</small><br>
+    <button  *ngIf='auth.isLoggedIn()' routerLink='/teachers/create'  class="btn btn-info">Create Properties</button>     
+    <button  routerLink='/professionals'  class="btn btn-danger">More Stationery</button>       
+</div>
+
+<div *ngIf="teachers">
+  <div  *ngFor="let c of teachers" class="col-sm-4">
+<div class="thumbnail" [routerLink]="['/teachers',c.id]">
+<h2> {{ c.name }}</h2><small><i>{{c.username}}</i></small>
+<h4>{{c.district}}</h4>
+<h4>{{c.createdAt}}</h4>
+ <img [src]='c.listViewImage' class='img-responsive img-circle'>
+
+<div class="btn btn-info pull-right">Details</div>
+<div class="btn btn-primary pull-right">Stationery Details</div>
+</div>
+</div>
+</div>

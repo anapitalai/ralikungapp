@@ -1,0 +1,18 @@
+<div *ngIf="teachers">
+    <div class="user-card text-center">
+        <div class='text-center'>
+            <h2>{{ teachers.name}} <small>{{ teachers.district }}</small></h2>
+        </div>
+        <div class="img-parent">
+
+            <div class='container' *ngFor='let i of teachers.avatarImage'>
+                <img class='img-responsive' [src]='i' class='img-responsive img-circle'>
+            </div>
+        </div>
+        <div class="well well-lg">{{teachers.description}}</div>
+
+        <button [routerLink]="['/teachers',teachers._id,'edit']" class="btn btn-primary btn-bg">Edit Profile</button>
+        <button (click)="teacherDelete()" class="btn btn-danger btn-bg">Delete Teacher</button>
+    </div>
+
+</div>

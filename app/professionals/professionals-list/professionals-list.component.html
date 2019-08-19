@@ -1,0 +1,19 @@
+<div class="jumbotron text-center">
+    <h1>Stationery Details</h1>
+    <small>Stationery Details.</small><br>
+    <button *ngIf='auth.isLoggedIn()' routerLink='/professionals/create' class="btn btn-danger">Create Stationery
+        Listing</button>
+</div>
+
+<div *ngIf="professionals">
+    <div  *ngFor="let c of professionals" class="col-sm-4">
+  <div class="thumbnail" [routerLink]="['/professionals',c.id]">
+   <img [src]='c.listViewImage' class='img-responsive img-circle'>
+   <h2> {{ c.name }}</h2>
+   <h2>{{description}}</h2>
+   <h4>{{c.createdAt}}</h4>
+  <div class="btn btn-info pull-right">Details</div>
+  <div class="btn btn-primary pull-right">Stationery Details</div>
+  </div>
+  </div>
+  </div>

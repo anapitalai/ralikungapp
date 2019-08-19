@@ -1,0 +1,16 @@
+<div *ngIf="professional">
+    <div class="user-card text-center">
+        <div class='text-center'>
+            <h2>{{ professional.name}} <small>{{ professional.desscription }}</small></h2>
+        </div>
+        <div class="img-parent">
+            <div class='container' *ngFor='let i of professional.images'>
+                <img class='img-responsive img-circle' [src]='i'>
+            </div>
+        </div>
+        <button [routerLink]="['/professionals',professional._id,'edit']" class="btn btn-primary btn-bg">Edit
+            Profile</button>
+        <button *ngIf="authService.isLoggedIn()" (click)="deleteProfessional()" class="btn btn-danger btn-bg">Delete Pro
+            Details</button>
+    </div>
+</div>

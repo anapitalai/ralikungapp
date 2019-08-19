@@ -1,0 +1,18 @@
+<div class="jumbotron text-center">
+    <h1>Users Dashboard</h1>
+    <small>Authentication and Authorization is the main aim.</small><br>
+    <button  routerLink='/dashboard/create'  class="btn btn-info">Create User</button>          
+</div>
+  <div class='contacts-list row' *ngIf="users">
+      <div class='col-sm-4' *ngFor="let u of users">
+        <div class="user-card text-center" [routerLink]="['/dashboard',u._id]">
+            <div class='text-center'> <h2>{{ u.email }} <small>{{ u._id}}</small></h2></div>
+
+        </div>
+       <div class="image">
+            <img class='img-responsive' [src]='u.avatar' class='img-responsive img-circle'>
+
+       </div>  
+        
+      </div>
+  </div>

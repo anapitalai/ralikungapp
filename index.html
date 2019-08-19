@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Teachers Wapp!</title>
+    <base href="/">
+
+    <!-- css -->
+    <!-- load bootstrap and some simple css -->
+    <link rel="stylesheet" href="node_modules/bootstrap3/dist/css/bootstrap.min.css">
+    <style>body { padding: 50px 0; }</style>
+
+    <!-- js -->
+    <!-- load polyfills and angular dependencies -->
+
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+
+    <!-- load our angular app with systemjs -->
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function(err) { console.error(err); });
+    </script>
+    <script>
+            System.config({
+                defaultJSExtensions:true,
+                map:{
+                    "ng2-file-upload":"node_modules/ng2-file-upload/ng2-file-upload.js"
+                }
+            });
+            
+    </script>
+        <script>
+            System.config({
+                defaultJSExtensions:true,
+                map:{
+                    "angular2-jwt":"node_modules/angular2-jwt/angular2-jwt.js"
+                }
+            });
+            
+    </script>
+</head>
+<body class="container">
+    <my-app></my-app> 
+
+</body>
+
+</html>
